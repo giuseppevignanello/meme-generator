@@ -3,7 +3,7 @@ import React from 'react'
 const AppHeader = () => {
     return (
         <div>
-            <nav className="navbar navbar-expand-sm navbar-dark bg-success">
+            <nav className="navbar navbar-expand-sm navbar-dark bg_main">
                 <div className="container">
                     <div className="logo_image me-3">
                         <img src="/img/trollface.png" alt="trollface" />

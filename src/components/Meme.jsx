@@ -10,8 +10,8 @@ const Meme = () => {
         axios.get('https://api.imgflip.com/get_memes')
             .then(response => {
                 setMemes(response.data.data.memes)
-                const randomNumber = Math.floor(Math.random() * memes.length)
-                setImagePath(memes[randomNumber].url)
+                const randomNumber = Math.floor(Math.random() * response.data.data.memes.length);
+                setImagePath(response.data.data.memes[randomNumber].url);
             })
             .catch(error =>
                 console.log(error))
@@ -29,7 +29,7 @@ const Meme = () => {
                     <input type="text" id='top_text' className='meme_input col-5 rounded py-2' placeholder='Top Text' />
                     <input type="text" id='bottom_text' className='meme_input col-5 rounded py-2' placeholder='Bottom Text' />
 
-                    <button onClick={getRandomMeme} type="button" name="" id="" className="btn btn-success form_btn col-5">Get a new image</button>
+                    <button onClick={getRandomMeme} type="button" name="" id="" className="bg_main form_btn col-5 p-2 rounded border-1">Get a new image</button>
 
                 </form>
                 <div className="image_meme text-center mt-5">

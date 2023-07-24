@@ -1,3 +1,5 @@
+/* #region header  */
+
 .logo_image {
     height: 50px;
 }
@@ -5,4 +7,19 @@
 .logo_image img {
     height: 100%;
 }
+
+/* #endregion header  */
+
+
+/* #region main */
+
+.image_meme {
+    height: 350px;
+}
+
+.image_meme img {
+    height: 100%;
+}
+
+/* #endregion_main */
 

@@ -4,9 +4,10 @@
 ## Features
 
 with an axios api call to https://api.imgflip.com/get_memes it is possibile get a random meme img 
+usign the input field the text appear on the image 
 
 ## Feature Feature 
-- add text to the image
+- modify the font size and move the text 
 - download the final meme 
 
 Made for education purpouse 

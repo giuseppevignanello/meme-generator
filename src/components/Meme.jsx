@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Text from './Text';
 import Buttons from './Buttons';
+import { DndContext, closestCenter } from '@dnd-kit/core';
 
 const Meme = () => {
     const [memes, setMemes] = useState([]);
@@ -83,34 +84,37 @@ const Meme = () => {
                     </div>
                 </form>
             </div>
-            <div className='main_content'>
-                <div className="image_meme text-center position-relative">
-                    <img src={imagePath} alt="" />
+            <DndContext collisionDetection={closestCenter}>
 
-                    <div className='text_container'>
-                        <Text
-                            id={'top'}
-                            text={textData.topText.toUpperCase()}
-                            fontSize={fontSizeTop}
-                            selected={selectedText}
-                            onClick={selectTop}
+                <div className='main_content'>
+                    <div className="image_meme text-center position-relative">
+                        <img src={imagePath} alt="" />
 
-                        />
-                        <Text
-                            id={'bottom'}
-                            text={textData.bottomText.toUpperCase()}
-                            fontSize={fontSizeBottom}
-                            selected={selectedText}
-                            onClick={selectBottom}
-                        />
+                        <div className='text_container'>
+                            <Text
+                                id={'top'}
+                                text={textData.topText.toUpperCase()}
+                                fontSize={fontSizeTop}
+                                selected={selectedText}
+                                onClick={selectTop}
+
+                            />
+                            <Text
+                                id={'bottom'}
+                                text={textData.bottomText.toUpperCase()}
+                                fontSize={fontSizeBottom}
+                                selected={selectedText}
+                                onClick={selectBottom}
+                            />
+                        </div>
                     </div>
+                    <Buttons
+                        selected={selectedText}
+                        onFontSizeIncrease={() => handleFontSizeChange(2)}
+                        onFontSizeDecrease={() => handleFontSizeChange(-2)}
+                    />
                 </div>
-                <Buttons
-                    selected={selectedText}
-                    onFontSizeIncrease={() => handleFontSizeChange(2)}
-                    onFontSizeDecrease={() => handleFontSizeChange(-2)}
-                />
-            </div>
+            </DndContext>
 
 
         </div>

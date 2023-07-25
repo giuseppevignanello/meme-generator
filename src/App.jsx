@@ -3,6 +3,7 @@ import AppHeader from './components/AppHeader'
 import Meme from './components/Meme'
 import AppFooter from './components/AppFooter'
 
+
 const App = () => {
   return (
     <div className='appWrapper'>

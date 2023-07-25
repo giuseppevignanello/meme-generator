@@ -1,3 +1,6 @@
+// Create to different components for top, bottom (and eventually other) text. Find another way to show the button
+
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Text from './Text';
@@ -57,25 +60,36 @@ const Meme = () => {
         <div>
             <div className="container">
                 <form className="meme_form" action="">
-                    <div className='d-flex gap-4 justify-content-center'>
-                        <input
-                            onChange={handleTextChange}
-                            value={textData.topText}
-                            name="topText"
-                            type="text"
-                            id="top_text"
-                            className="meme_input col-5 rounded py-2"
-                            placeholder="Top Text"
-                        />
-                        <input
-                            onChange={handleTextChange}
-                            value={textData.bottomText}
-                            name="bottomText"
-                            type="text"
-                            id="bottom_text"
-                            className="meme_input col-5 rounded py-2"
-                            placeholder="Bottom Text"
-                        />
+                    <div className='d-flex row justify-content-center'>
+                        <div className='d-flex align-items-center gap-2 col-12 col-sm-5 justify-content-center'>
+                            <div onClick={selectTop}>
+                                <i className="fa-solid fa-gear"></i>
+                            </div>
+                            <input
+                                onChange={handleTextChange}
+                                value={textData.topText}
+                                name="topText"
+                                type="text"
+                                id="top_text"
+                                className="meme_input rounded"
+                                placeholder="Top Text"
+                            />
+                        </div>
+                        <div className='d-flex align-items-center gap-2 col-12 col-sm-5 justify-content-center'>
+
+                            <div onClick={selectBottom}>
+                                <i className="fa-solid fa-gear"></i>
+                            </div>
+                            <input
+                                onChange={handleTextChange}
+                                value={textData.bottomText}
+                                name="bottomText"
+                                type="text"
+                                id="bottom_text"
+                                className="meme_input rounded"
+                                placeholder="Bottom Text"
+                            />
+                        </div>
                     </div>
                     <div className='d-flex justify-content-center pt-3'>
                         <button onClick={getRandomMeme} type="button" name="" id="" className="bg_main form_btn  p-2 rounded border-1 text-white">
@@ -96,7 +110,7 @@ const Meme = () => {
                                 text={textData.topText.toUpperCase()}
                                 fontSize={fontSizeTop}
                                 selected={selectedText}
-                                onClick={selectTop}
+
 
                             />
                             <Text
@@ -104,15 +118,16 @@ const Meme = () => {
                                 text={textData.bottomText.toUpperCase()}
                                 fontSize={fontSizeBottom}
                                 selected={selectedText}
-                                onClick={selectBottom}
+
                             />
                         </div>
+                        <Buttons
+                            selected={selectedText}
+                            onFontSizeIncrease={() => handleFontSizeChange(2)}
+                            onFontSizeDecrease={() => handleFontSizeChange(-2)}
+                        />
                     </div>
-                    <Buttons
-                        selected={selectedText}
-                        onFontSizeIncrease={() => handleFontSizeChange(2)}
-                        onFontSizeDecrease={() => handleFontSizeChange(-2)}
-                    />
+
                 </div>
             </DndContext>
 

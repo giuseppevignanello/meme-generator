@@ -3,7 +3,7 @@ import React from 'react'
 const Buttons = ({ selected, onFontSizeIncrease, onFontSizeDecrease }) => {
     return (
 
-        <div className={`d-flex flex-column justify-content-between ${selected ? 'd-block' : 'd-none'}`}>
+        <div className={`d-flex flex-column ${selected ? 'd-block' : 'd-none'}`}>
             <div>
                 <h4 className="text-center mt-2">{selected.toUpperCase()} FONT SIZE</h4>
             </div>

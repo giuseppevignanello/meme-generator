@@ -1,6 +1,7 @@
 /* #region general */
 .appWrapper {
-    background-color: #ffbc4278
+    background-color: #ffbc4278;
+    height: 100vh;
 }
 
 .bg_main {
@@ -16,7 +17,7 @@
     position: sticky;
     top: 0; 
     width: 100%;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .logo_image {
@@ -35,12 +36,12 @@
     margin-top: 6rem;
 } */
 .main_content {
-    margin-top: 3rem;
+    margin-top: 0.5rem;
     height: calc(100vh - 333px);
 }
 
 .image_meme {
-    height: 350px;
+    height: 300px;
 }
 
 .image_meme img {

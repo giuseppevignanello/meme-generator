@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDraggable } from '@dnd-kit/core';
 
-const Text = ({ id, text, fontSize, onClick }) => {
+const BottomText = ({ id, text, fontSize, onClick }) => {
     const { attributes, listeners, setNodeRef, transform } = useDraggable({
         id: 'draggable',
     });
@@ -22,4 +22,4 @@ const Text = ({ id, text, fontSize, onClick }) => {
     );
 };
 
-export default Text;
+export default BottomText;

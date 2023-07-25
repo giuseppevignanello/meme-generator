@@ -2,19 +2,21 @@ import React from 'react'
 
 const Buttons = ({ selected, onFontSizeIncrease, onFontSizeDecrease }) => {
     return (
-        <div className={`d-flex flex-column justify-content-between h-100 ${selected ? 'd-block' : 'd-none'}`}>
+
+        <div className={`d-flex flex-column justify-content-between ${selected ? 'd-block' : 'd-none'}`}>
             <div>
-                <h6 className="text-center mt-2">Font-size Text</h6>
+                <h4 className="text-center mt-2">{selected.toUpperCase()} FONT SIZE</h4>
             </div>
-            <div >
-                <button onClick={onFontSizeIncrease} type="button" className="btn btn-secondary">
-                    ⬆️
+            <div className='d-flex gap-2 justify-content-center' >
+                <button className='rounded p-1 px-2 border-0 bg-dark text-white' onClick={onFontSizeIncrease} type="button">
+                    <i className="fa-solid fa-arrow-up"></i>
                 </button>
-                <button onClick={onFontSizeDecrease} type="button" className="btn btn-secondary">
-                    ⬇️
+                <button className='rounded p-1 px-2 border-0 bg-white' onClick={onFontSizeDecrease} type="button">
+                    <i className="fa-solid fa-arrow-down"></i>
                 </button>
             </div>
         </div>
+
     )
 }
 

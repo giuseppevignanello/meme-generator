@@ -1,4 +1,7 @@
 /* #region general */
+.appWrapper {
+    background-color: #ffbc4278
+}
 
 .bg_main {
     background-color: #FFA500;
@@ -7,6 +10,14 @@
 
 
 /* #region header  */
+
+.app_header {
+    height: 75px;
+    position: sticky;
+    top: 0; 
+    width: 100%;
+    margin-bottom: 3rem;
+}
 
 .logo_image {
     height: 50px;
@@ -20,6 +31,13 @@
 
 
 /* #region main */
+/* .meme_form {
+    margin-top: 6rem;
+} */
+.main_content {
+    margin-top: 3rem;
+    height: calc(100vh - 333px);
+}
 
 .image_meme {
     height: 350px;
@@ -53,4 +71,15 @@
 }
 
 /* #endregion_main */
+
+/* #region footer */
+
+.app_footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 70px;
+}
+
+/* #endregion footer */
 

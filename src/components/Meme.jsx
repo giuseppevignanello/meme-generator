@@ -44,11 +44,14 @@ const Meme = () => {
                     <button onClick={getRandomMeme} type="button" name="" id="" className="bg_main form_btn col-5 p-2 rounded border-1">Get a new image</button>
 
                 </form>
-                <div className="image_meme text-center mt-5">
+                <div className="image_meme text-center mt-5 position-relative">
                     <img src={imagePath} alt="" />
+                    <div className='text_container d-flex flex-column justify-content-between h-100'>
+                        <p className='text' >{topText}</p>
+                        <p className='text'>{bottomText}</p>
+                    </div>
                 </div>
-                <p>{topText}</p>
-                <p>{bottomText}</p>
+
 
             </div>
         </div>

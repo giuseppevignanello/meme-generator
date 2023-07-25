@@ -1,8 +1,12 @@
-# React + Vite
+<img src="https://api.giuseppevignanello.com/storage/public/uploads/KlEHtZBa0axYtWFUJcp9bchwHuk0iN68h596pvEE.png" alt="Meme Generator">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Meme Generator
+## Features
 
-Currently, two official plugins are available:
+with an axios api call to https://api.imgflip.com/get_memes it is possibile get a random meme img 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Feature Feature 
+- add text to the image
+- download the final meme 
+
+Made for education purpouse 

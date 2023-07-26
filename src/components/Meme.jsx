@@ -16,9 +16,14 @@ const Meme = () => {
     const [fontSizeRight, setFontSizeRight] = useState(24);
     const [textTopPosition, setTextTopPosition] = useState([0, 50]);
     const [textBottomPosition, setTextBottomPosition] = useState([85, 50]);
-    const [textLeftPosition, setTextLeftPosition] = useState([50, 40]);
+    const [textLeftPosition, setTextLeftPosition] = useState([50, 30]);
     const [textRightPosition, setTextRightPosition] = useState([50, 60]);
-
+    const [inputs, setInputs] = useState([
+        { name: 'topText', select: selectTop },
+        { name: 'bottomText', select: selectBottom },
+        { name: 'leftText', select: selectLeft },
+        { name: 'rightText', select: selectRight },
+    ]);
     const [selectedText, setSelectedText] = useState('');
 
 
@@ -105,63 +110,22 @@ const Meme = () => {
             <div className="container">
                 <form className="meme_form" action="">
                     <div className='d-flex row justify-content-center'>
-                        <div className='d-flex align-items-center gap-2 col-12 col-sm-5 justify-content-center'>
-                            <div onClick={selectTop}>
-                                <i className="fa-solid fa-gear"></i>
+                        {inputs.map(input => (
+                            <div key={input.name} className='d-flex align-items-center gap-2 col-12 col-sm-5 justify-content-center my-2'>
+                                <div onClick={input.select}>
+                                    <i className="fa-solid fa-gear"></i>
+                                </div>
+                                <input
+                                    onChange={handleTextChange}
+                                    value={textData[input.name]}
+                                    type="text"
+                                    name={input.name}
+                                    id={input.name}
+                                    className="meme_input rounded"
+                                    placeholder='Add Text'
+                                />
                             </div>
-                            <input
-                                onChange={handleTextChange}
-                                value={textData.topText}
-                                name="topText"
-                                type="text"
-                                id="top_text"
-                                className="meme_input rounded"
-                                placeholder="Top Text"
-                            />
-                        </div>
-                        <div className='d-flex align-items-center gap-2 col-12 col-sm-5 justify-content-center'>
-
-                            <div onClick={selectBottom}>
-                                <i className="fa-solid fa-gear"></i>
-                            </div>
-                            <input
-                                onChange={handleTextChange}
-                                value={textData.bottomText}
-                                name="bottomText"
-                                type="text"
-                                id="bottom_text"
-                                className="meme_input rounded"
-                                placeholder="Bottom Text"
-                            />
-                        </div>
-                        <div className='d-flex align-items-center gap-2 col-12 col-sm-5 justify-content-center'>
-                            <div onClick={selectLeft}>
-                                <i className="fa-solid fa-gear"></i>
-                            </div>
-                            <input
-                                onChange={handleTextChange}
-                                value={textData.leftText}
-                                name="leftText"
-                                type="text"
-                                id="left_text"
-                                className="meme_input rounded"
-                                placeholder="Add Text"
-                            />
-                        </div>
-                        <div className='d-flex align-items-center gap-2 col-12 col-sm-5 justify-content-center'>
-                            <div onClick={selectRight}>
-                                <i className="fa-solid fa-gear"></i>
-                            </div>
-                            <input
-                                onChange={handleTextChange}
-                                value={textData.rightText}
-                                name="rightText"
-                                type="text"
-                                id="right_text"
-                                className="meme_input rounded"
-                                placeholder="Add Text"
-                            />
-                        </div>
+                        ))}
                     </div>
                     <div className='d-flex justify-content-center pt-3'>
                         <button onClick={getRandomMeme} type="button" name="" id="" className="bg_main form_btn  p-2 rounded border-1 text-white">
@@ -176,7 +140,7 @@ const Meme = () => {
             {/* /meme content */}
             <div className='main_content' >
                 <div className="image_meme text-center position-relative">
-                    <img src={imagePath} alt="" />
+                    <img src={imagePath} />
                     <Text
                         id={'top'}
                         text={textData.topText.toUpperCase()}

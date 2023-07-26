@@ -2,10 +2,10 @@ import React from 'react'
 
 const Buttons = ({ selected, onFontSizeIncrease, onFontSizeDecrease, OnPositionChangeUp, OnPositionChangeDown, OnPositionChangeLeft, OnPositionChangeRight }) => {
     return (
-        <div className='d-flex justify-content-center gap-4'>
+        <div className='d-flex justify-content-center gap-4 align-items-center'>
             <div className={`d-flex flex-column ${selected ? 'd-block' : 'd-none'}`}>
                 <div>
-                    <h4 className="text-center mt-2">{selected.toUpperCase()} FONT SIZE</h4>
+                    <h5 className="text-center mt-2"><strong> {selected.toUpperCase()} FONT SIZE </strong></h5>
                 </div>
                 <div className='d-flex gap-2 justify-content-center' >
                     <button className='rounded p-1 px-2 border-0 bg-dark text-white' onClick={onFontSizeIncrease} type="button">
@@ -18,7 +18,7 @@ const Buttons = ({ selected, onFontSizeIncrease, onFontSizeDecrease, OnPositionC
             </div>
             <div className={`flex-column justify-content-center ${selected ? 'd-flex' : 'd-none'}`}>
                 <div>
-                    <h4 className="text-center mt-2">MOVE {selected.toUpperCase()} TEXT</h4>
+                    <h5 className="text-center mt-2"> <strong> MOVE {selected.toUpperCase()} TEXT </strong></h5>
                 </div>
                 <div className='position-relative move_buttons d-flex' >
                     <button className='rounded p-1 px-2 border-0 bg-white up_button' onClick={OnPositionChangeUp} type="button">

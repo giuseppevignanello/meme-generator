@@ -49,22 +49,23 @@
     max-width: 100%;
 }
 
-.text_container {
-    position: absolute;
-    top: 3%;
-    left: 50%;
+.texttop {
     transform: translate(-50%);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+}
+
+.textbottom {
+  
+    transform: translate(-50%);
 }
 
 .text {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 700;
     color: white;
-    -webkit-text-stroke: 0.8px black
+    -webkit-text-stroke: 0.8px black; 
+    max-width: 300px;
+    word-wrap: break-word;
+
 }
 
 .text:hover {

@@ -11,6 +11,8 @@ const Meme = () => {
     const [imagePath, setImagePath] = useState('');
     const [textData, setTextData] = useState({ topText: '', bottomText: '' });
     const [fontSizeTop, setFontSizeTop] = useState(24);
+    const [textTopPosition, setTextTopPosition] = useState([0, 50]);
+    const [textBottomPosition, setTextBottomPosition] = useState([85, 50]);
     const [fontSizeBottom, setFontSizeBottom] = useState(24);
     const [selectedText, setSelectedText] = useState('');
 
@@ -57,6 +59,21 @@ const Meme = () => {
         }
     }
 
+    function handleTextPositionChangeUpAndDown(change) {
+        if (selectedText === 'top') {
+            setTextTopPosition([textTopPosition[0] + change, textTopPosition[1]]);
+        } else if (selectedText === 'bottom') {
+            setTextBottomPosition([textBottomPosition[0] + change, textBottomPosition[1]]);
+        }
+    }
+
+    function handleTextPositionChangeLeftAndRight(change) {
+        if (selectedText === 'top') {
+            setTextTopPosition([textTopPosition[0], textTopPosition[1] + change]);
+        } else if (selectedText === 'bottom') {
+            setTextBottomPosition([textBottomPosition[0], textBottomPosition[1] + change]);
+        }
+    }
 
     return (
         <div>
@@ -103,31 +120,34 @@ const Meme = () => {
             <div className='main_content' >
                 <div className="image_meme text-center position-relative">
                     <img src={imagePath} alt="" />
-
-                    <div className='text_container'>
-                        <Text
-                            id={'top'}
-                            text={textData.topText.toUpperCase()}
-                            fontSize={fontSizeTop}
-                            selected={selectedText}
-
-
-                        />
-                        <Text
-                            id={'bottom'}
-                            text={textData.bottomText.toUpperCase()}
-                            fontSize={fontSizeBottom}
-                            selected={selectedText}
-
-                        />
-                    </div>
-                    <Buttons
+                    <Text
+                        id={'top'}
+                        text={textData.topText.toUpperCase()}
+                        fontSize={fontSizeTop}
                         selected={selectedText}
-                        onFontSizeIncrease={() => handleFontSizeChange(2)}
-                        onFontSizeDecrease={() => handleFontSizeChange(-2)}
+                        textPosition={textTopPosition}
+
+
+                    />
+                    <Text
+                        id={'bottom'}
+                        text={textData.bottomText.toUpperCase()}
+                        fontSize={fontSizeBottom}
+                        selected={selectedText}
+                        textPosition={textBottomPosition}
+
                     />
                 </div>
+                <Buttons
+                    selected={selectedText}
+                    onFontSizeIncrease={() => handleFontSizeChange(2)}
+                    onFontSizeDecrease={() => handleFontSizeChange(-2)}
+                    OnPositionChangeUp={() => handleTextPositionChangeUpAndDown(-2)}
+                    OnPositionChangeDown={() => handleTextPositionChangeUpAndDown(2)}
+                    OnPositionChangeLeft={() => handleTextPositionChangeLeftAndRight(-2)}
+                    OnPositionChangeRight={() => handleTextPositionChangeLeftAndRight(2)}
 
+                />
             </div>
 
         </div>

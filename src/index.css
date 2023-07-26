@@ -77,6 +77,38 @@
     border: 1px solid red;
 }
 
+/* #region move buttons */
+.move_buttons {
+    height: 100px;
+    width: 100px;
+    margin: auto;
+}
+
+.up_button {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+.down_button {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%);
+}
+.left_button {
+    position: absolute; 
+    left: 0%;
+    top: 35%;
+}
+.right_button {
+    position: absolute;
+    right: 0%;
+    top: 35%;
+}
+
+/* #end region move buttons */
+
 /* #endregion_main */
 
 /* #region footer */

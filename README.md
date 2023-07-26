@@ -6,8 +6,10 @@
 with an axios api call to https://api.imgflip.com/get_memes it is possibile get a random meme img 
 usign the input field the text appear on the image 
 
+Modify the font size and move the text 
+
 ## Feature Feature 
-- modify the font size and move the text 
-- download the final meme 
+
+Download the final meme 
 
 Made for education purpouse 
